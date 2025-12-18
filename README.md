@@ -31,6 +31,7 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 /* write all the steps invloved */
 
 **PROGRAM**
+upcounter
 ```
 module Upcounter (out, clk, rstn);
 input clk, rstn;
@@ -44,6 +45,44 @@ begin
         out <= out + 1;
 end
 endmodule
+```
+downcounter
+method 1
+```
+module Downcounter (
+    output reg [3:0] out,
+    input clk,
+    input rstn
+);
+
+always @ (posedge clk) begin
+    if (!rstn)
+        out <= 4'b1111;                                                 
+    else if (out == 4'b0000)
+        out <= 4'b1111; // Wrap around to maximum count when reaching 0
+    else
+        out <= out - 1; // Decrement count
+end
+
+endmodule
+```
+method 2
+```
+module Downcounter (
+    output reg [3:0] out,
+    input clk,
+    input rstn
+);
+
+always @ (posedge clk) begin
+    if (!rstn)
+        out <= 4'b1111;                                                 
+    else
+        out <= out - 1'b1; // Decrement count using 1'b1
+end
+
+endmodule
+
 ```
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. 
 
