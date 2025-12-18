@@ -98,8 +98,7 @@ Developed by: RegisterNumber:25017492
 
 
 **TRUTH TABLE**
-<img width="408" height="287" alt="Screenshot 2025-12-17 204940" src="https://github.com/user-attachments/assets/7b509af4-3a11-4158-b9c8-ecf1461991f3" />
-
+<img width="1122" height="745" alt="Screenshot 2025-12-18 093602" src="https://github.com/user-attachments/assets/e1c596bf-fc37-4b3f-9e4c-ae8aa5606e53" />
 
 **RESULTS**
 To implement 4 bit synchronous up counter and validate functionality is succeed.
